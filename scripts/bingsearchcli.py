@@ -13,7 +13,7 @@ def output(outfile, output_list):
 		file_var.write('\n')
 
 
-def search(query, outfile, limit):
+def search(query, outfile, limit, proxy):
 	headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0', 'Referer': 'https://www.bing.com/'}
 	session = requests.Session()
 	end_of_search = 'No results found for <strong>' + query + '</strong>'
@@ -31,7 +31,7 @@ def search(query, outfile, limit):
 	try:
 		while end_of_search not in response and sw_next == True:
 			search_url = 'https://www.bing.com/search?q=' + enc_query + '&go=Submit&qs=n&pq=' + enc_query + '&first=' + str(next) + '&FORM=PERE'
-			response = session.get(search_url, headers=headers)
+			response = session.get(search_url, headers=headers, proxies=proxy)
 			hrefs = re.findall('<h2><a href="\S+', response.text)
 
 			for href in hrefs:
@@ -56,8 +56,9 @@ def search(query, outfile, limit):
 		if outfile:
 			output(outfile, output_list)
 
-	except Exception:
+	except Exception as e:
 		print('Connection Error')
+		print(e)
 
 
 def main():
@@ -66,12 +67,14 @@ def main():
 	parser.add_argument('query', type=str, help='Your search query.')
 	parser.add_argument('-w', '--outfile', type=str, help='Write to the specified output file instead of standard output.')
 	parser.add_argument('-l', '--limit', type=int, help='Limit the Number of pages to check.')
+	parser.add_argument('-x', '--proxy', type=str, help='Proxy to be used. Format: [PROTOCOL://][USER:PASSWORD@]HOST[:PORT]')
 	args = parser.parse_args()
 	print('Searching for:', args.query, '\n')
 	query = args.query
 	outfile = args.outfile
 	limit = args.limit
-	search(query, outfile, limit)
+	proxy = {'http': args.proxy, 'https': args.proxy}
+	search(query, outfile, limit, proxy)
 
 
 if __name__ == '__main__':
