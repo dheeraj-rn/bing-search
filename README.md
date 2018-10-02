@@ -31,6 +31,9 @@ optional arguments:
                         output.
   -l LIMIT, --limit LIMIT
                         Limit the Number of pages to check.
+  -x PROXY, --proxy PROXY
+                        Proxy to be used. Format:
+                        [PROTOCOL://][USER:PASSWORD@]HOST[:PORT]                      
 ```
 
 ### Basic Usage
