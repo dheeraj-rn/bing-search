@@ -1,4 +1,4 @@
-# Bing Search Cli
+# Bing Search Cli [![Last commit](https://img.shields.io/github/last-commit/dheeraj-rn/BingSearchCli.svg)](https://github.com/dheeraj-rn/BingSearchCli/commits/master) [![License](https://img.shields.io/github/license/dheeraj-rn/BingSearchCli.svg)](https://github.com/dheeraj-rn/BingSearchCli/blob/master/LICENSE.md)
 
 ## Dependencies  
 
