@@ -1,4 +1,4 @@
-# Bing Search Cli [![Last commit](https://img.shields.io/github/last-commit/dheeraj-rn/BingSearchCli.svg)](https://github.com/dheeraj-rn/BingSearchCli/commits/master) [![License](https://img.shields.io/github/license/dheeraj-rn/BingSearchCli.svg)](https://github.com/dheeraj-rn/BingSearchCli/blob/master/LICENSE.md)
+# Bing Search [![Last commit](https://img.shields.io/github/last-commit/dheeraj-rn/bing-search.svg)](https://github.com/dheeraj-rn/bing-search/commits/master) [![License](https://img.shields.io/github/license/dheeraj-rn/bing-search.svg)](https://github.com/dheeraj-rn/bing-search/blob/master/LICENSE.md)
 
 ## Dependencies  
 
@@ -8,18 +8,18 @@ Requires `Python3+` and `pip`
 
 ### Source
 ```sh
-$ git clone https://github.com/dheeraj-rn/BingSearchCli.git
-$ cd BingSearchCli
+$ git clone https://github.com/dheeraj-rn/bing-search.git
+$ cd bing-search
 $ sudo python3 setup.py install
 ```
 
 ## Usage
 ### Options
 ```sh
-$ bingsearchcli --help
-usage: bingsearchcli [-h] [-w OUTFILE] [-l LIMIT] query
+$ bing --help
+usage: bing [-h] [-w OUTFILE] [-l LIMIT] query
 
-Bing Search Cli
+Bing Search
 
 positional arguments:
   query                 Your search query.
@@ -38,25 +38,25 @@ optional arguments:
 
 ### Basic Usage
 ```sh
-$ bingsearchcli "linux"           #outputs search results to terminal screen
+$ bing "linux"           #outputs search results to terminal screen
 ```
 
 ### Write search results to file
 ```sh
-$ bingsearchcli "linux" -w output.txt         #Writes search results to output.txt
-$ bingsearchcli "linux" --outfile output.txt
+$ bing "linux" -w output.txt         #Writes search results to output.txt
+$ bing "linux" --outfile output.txt
 ```
 
 ### Limit number of pages to check on bing search
 ```sh
-$ bingsearchcli "linux" -l 2           #outputs search results in first 2 pages in bing search
-$ bingsearchcli "linux" --limit 2
+$ bing "linux" -l 2           #outputs search results in first 2 pages in bing search
+$ bing "linux" --limit 2
 ```
 
 ## Contribute
 
-Found an issue? Post it in the [issue tracker](https://github.com/dheeraj-rn/BingSearchCli/issues). <br> 
-Want to add another awesome feature? [Fork](https://github.com/dheeraj-rn/BingSearchCli/fork) this repository and add your feature, then send a pull request.
+Found an issue? Post it in the [issue tracker](https://github.com/dheeraj-rn/bing-search/issues). <br> 
+Want to add another awesome feature? [Fork](https://github.com/dheeraj-rn/bing-search/fork) this repository and add your feature, then send a pull request.
 
 ## License
 The MIT License (MIT)
