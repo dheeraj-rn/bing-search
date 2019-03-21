@@ -14,7 +14,7 @@ def output(outfile, output_list):
 
 
 def search(query, outfile, limit, proxy):
-	headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0', 'Referer': 'https://www.bing.com/'}
+	headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0', 'Referer': 'https://www.bing.com/'}
 	session = requests.Session()
 	end_of_search = 'No results found for <strong>' + query + '</strong>'
 	enc_query = urllib.parse.quote(query)
@@ -62,7 +62,7 @@ def search(query, outfile, limit, proxy):
 
 
 def main():
-	description = 'Bing Search Cli'
+	description = 'Bing Search'
 	parser = argparse.ArgumentParser(description=description)
 	parser.add_argument('query', type=str, help='Your search query.')
 	parser.add_argument('-w', '--outfile', type=str, help='Write to the specified output file instead of standard output.')
