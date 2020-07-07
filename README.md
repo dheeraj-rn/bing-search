@@ -1,5 +1,5 @@
 # Bing Search [![Last commit](https://img.shields.io/github/last-commit/dheeraj-rn/bing-search.svg)](https://github.com/dheeraj-rn/bing-search/commits/master) [![License](https://img.shields.io/github/license/dheeraj-rn/bing-search.svg)](https://github.com/dheeraj-rn/bing-search/blob/master/LICENSE.md)
-
+Python command line application to search queries and dorks on [bing.com](https://www.bing.com/) and return urls in the search results
 ## Dependencies  
 
 Requires `Python3+` and `pip`
@@ -39,6 +39,11 @@ optional arguments:
 ### Basic Usage
 ```sh
 $ bing "linux"           #outputs search results to terminal screen
+```
+
+### Search Dork Query
+```sh
+$ bing "index.php?id="   #outputs search results to terminal screen
 ```
 
 ### Write search results to file
