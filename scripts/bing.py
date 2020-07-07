@@ -14,7 +14,7 @@ def output(outfile, output_list):
 
 
 def search(query, outfile, limit, proxy):
-	headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0', 'Referer': 'https://www.bing.com/'}
+	headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0', 'Referer': 'https://www.bing.com/'}
 	session = requests.Session()
 	end_of_search = 'No results found for <strong>' + query + '</strong>'
 	enc_query = urllib.parse.quote(query)
@@ -30,7 +30,7 @@ def search(query, outfile, limit, proxy):
 
 	try:
 		while end_of_search not in response and sw_next == True:
-			search_url = 'https://www.bing.com/search?q=' + enc_query + '&go=Submit&qs=n&pq=' + enc_query + '&first=' + str(next) + '&FORM=PERE'
+			search_url = f'https://www.bing.com/search?q={enc_query}&go=Submit&qs=n&pq={enc_query}&first={str(next)}&FORM=PERE'
 			response = session.get(search_url, headers=headers, proxies=proxy)
 			hrefs = re.findall('<h2><a href="\S+', response.text)
 
